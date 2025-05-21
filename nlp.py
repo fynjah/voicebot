@@ -3,7 +3,7 @@ from typing import Optional
 
 import openai
 
-from config import Config
+from .config import Config
 
 logger = logging.getLogger("voicebot.nlp")
 openai.api_key = Config.OPENAI_API_KEY
