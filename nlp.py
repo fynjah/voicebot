@@ -3,7 +3,7 @@ from typing import Optional
 
 import openai
 
-from .config import Config
+from config import Config
 
 logger = logging.getLogger("voicebot.nlp")
 openai.api_key = Config.OPENAI_API_KEY
@@ -17,7 +17,7 @@ async def extract_name(text: str) -> Optional[str]:
         "Reply with the name only, no explanations."
     )
     response = openai.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "system",
