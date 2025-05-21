@@ -1,10 +1,12 @@
 import logging
+
 from livekit_client import LiveKitClient
+from nlp import extract_name
 from speech import speech_to_text
 from tts import text_to_speech
-from nlp import extract_name
 
 logger = logging.getLogger("voicebot.logic")
+
 
 async def main_logic():
     lk = LiveKitClient()

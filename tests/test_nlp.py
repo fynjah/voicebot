@@ -1,5 +1,7 @@
 import pytest
+
 from nlp import extract_name
+
 
 @pytest.mark.asyncio
 async def test_extract_name():

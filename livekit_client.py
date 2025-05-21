@@ -2,6 +2,7 @@ import logging
 
 logger = logging.getLogger("voicebot.livekit")
 
+
 class LiveKitClient:
     def __init__(self):
         pass  # тут можна додати реальні параметри, якщо треба
@@ -17,7 +18,10 @@ class LiveKitClient:
     async def receive_audio(self) -> str:
         logger.info("listening audio from user")
         # Mock: just expect 'user_input.wav' in the project folder
-        print(">>> Please record user voice as 'user_input.wav' and press Enter to continue...")
+        print(
+            ">>> Please record user voice as "
+            "'user_input.wav' and press Enter to continue..."
+        )
         input()
         return "user_input.wav"
 

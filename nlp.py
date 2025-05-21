@@ -1,6 +1,8 @@
-from typing import Optional
-import openai
 import logging
+from typing import Optional
+
+import openai
+
 from config import Config
 
 logger = logging.getLogger("voicebot.nlp")
@@ -11,14 +13,18 @@ async def extract_name(text: str) -> Optional[str]:
     logger.info("name-detected")
     prompt = (
         "Extract the person's first name from this text: "
-        f"\"{text}\"\n"
+        f'"{text}"\n'
         "Reply with the name only, no explanations."
     )
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You help extract a person's first name from a conversation."},
-            {"role": "user", "content": prompt}
+            {
+                "role": "system",
+                "content": "You help extract a person's "
+                "first name from a conversation.",
+            },
+            {"role": "user", "content": prompt},
         ],
         temperature=0.2,
         max_tokens=10,

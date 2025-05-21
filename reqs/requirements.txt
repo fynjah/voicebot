@@ -9,3 +9,4 @@ aiortc
 livekit-agents
 soundfile
 pytest
+pre-commit
